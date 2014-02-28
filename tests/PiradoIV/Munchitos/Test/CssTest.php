@@ -27,4 +27,12 @@ HTML;
         $stylesheets = $this->munchitos->stylesheets();
         $this->assertEquals(2, count($stylesheets));
     }
+
+    public function testReturnNullOnEmpty()
+    {
+        $html = '<html><body>Empty HTML</body></html>';
+        $this->munchitos->html($html);
+        $stylesheets = $this->munchitos->stylesheets();
+        $this->assertEquals(null, $stylesheets);
+    }
 }

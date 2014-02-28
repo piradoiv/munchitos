@@ -143,6 +143,10 @@ class Munchitos
                 }
             );
 
+        if (empty($stylesheets)) {
+            return null;
+        }
+
         return $stylesheets;
     }
 }
