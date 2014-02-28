@@ -77,6 +77,7 @@ HTML;
     {
         $images = $this->munchitos->images();
         $this->assertTrue($images[0]->isLinked());
+        $this->assertFalse($images[1]->isLinked());
     }
 
     /**
