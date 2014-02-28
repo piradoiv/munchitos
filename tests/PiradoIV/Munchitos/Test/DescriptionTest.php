@@ -6,6 +6,11 @@ use \PiradoIV\Munchitos\Munchitos;
 
 class DescriptionTest extends TestCase
 {
+    /**
+     * Prepares the same contents for all tests.
+     *
+     * @return void
+     */
     public function setUp()
     {
         $this->description = 'Hello World!';
@@ -22,11 +27,23 @@ HTML;
         $this->munchitos->html($this->html);
     }
 
+    /**
+     * If the description is present, Munchitos
+     * should return it.
+     *
+     * @return void
+     */
     public function testCanFetchDescription()
     {
         $this->assertEquals($this->description, $this->munchitos->description());
     }
 
+    /**
+     * If there isn't any meta description,
+     * return null.
+     *
+     * @return void
+     */
     public function testDescriptionReturnsNullIfNotPresent()
     {
         $this->munchitos->html('<html><body>Empty headers</body></html>');
