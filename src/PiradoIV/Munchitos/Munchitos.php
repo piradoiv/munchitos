@@ -149,4 +149,10 @@ class Munchitos
 
         return $stylesheets;
     }
+
+    public function charset()
+    {
+        $charset = $this->crawler()->filter('head meta[charset]')->attr('charset');
+        return $charset;
+    }
 }
