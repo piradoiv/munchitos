@@ -26,4 +26,10 @@ HTML;
     {
         $this->assertEquals($this->description, $this->munchitos->description());
     }
+
+    public function testDescriptionReturnsNullIfNotPresent()
+    {
+        $this->munchitos->html('<html><body>Empty headers</body></html>');
+        $this->assertEquals(null, $this->munchitos->description());
+    }
 }
