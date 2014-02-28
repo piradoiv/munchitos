@@ -106,4 +106,22 @@ class Munchitos
             return null;
         }
     }
+
+    /**
+     * Returns the canonical URL, if present,
+     * returns null otherwise.
+     *
+     * @return String The Canonical URL.
+     */
+    public function canonical()
+    {
+        try {
+            $canonical = $this->crawler()
+                ->filter('head link[rel="canonical"]')->attr('href');
+
+            return $canonical;
+        } catch (\InvalidArgumentException $exception) {
+            return null;
+        }
+    }
 }
