@@ -9,7 +9,17 @@ class TitleTest extends TestCase
     public function setUp()
     {
         $this->title = 'Hello World!';
-        $this->html = "<html><head><title>{$this->title}</title></head></html>";
+        $this->html = <<<HTML
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {$this->title}
+    </title>
+  </head>
+</html>
+HTML;
+
         $this->munchitos = new Munchitos;
         $this->munchitos->html($this->html);
     }
