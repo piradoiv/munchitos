@@ -101,4 +101,33 @@ HTML;
             $this->assertFalse($link->isFollowed());
         }
     }
+
+    /**
+     * Ensures the Link object doesn't fails
+     * on unexpected empty anchors.
+     *
+     * @return void
+     */
+    public function testDoesntFailsOnEmptyLinks()
+    {
+        $html = <<<HTML
+<!doctype html>
+<html>
+  <body>
+    <a name="#" />
+    <a href="www.example.org">Second link</a>
+  </body>
+</html>
+HTML;
+        $this->munchitos->html($html);
+        $links = $this->munchitos->links();
+        foreach ($links as $link) {
+            $link->title();
+            $link->href();
+            $link->target();
+            $link->isNoFollow();
+        }
+
+        $this->assertEquals(2, count($links));
+    }
 }
