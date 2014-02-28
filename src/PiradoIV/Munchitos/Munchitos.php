@@ -149,4 +149,30 @@ class Munchitos
 
         return $stylesheets;
     }
+
+    public function charset()
+    {
+        try {
+            $charset = $this->crawler()
+                ->filter('head meta[charset]')
+                ->attr('charset');
+            return $charset;
+        } catch (\InvalidArgumentException $exception) {
+            // Just continues.
+        }
+
+        try {
+            $content = $this->crawler()
+                ->filter('head meta[http-equiv]')
+                ->attr('content');
+
+            $needle = 'charset=';
+            $position = strpos($content, $needle);
+            $charset = substr($content, $position + strlen($needle));
+
+            return $charset;
+        } catch (\InvalidArgumentException $exception) {
+            // Just continues.
+        }
+    }
 }
