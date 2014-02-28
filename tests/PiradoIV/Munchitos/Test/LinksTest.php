@@ -45,4 +45,13 @@ HTML;
             $this->assertEquals('Testing', $link->title());
         }
     }
+
+    public function testLinksCanExtractTarget()
+    {
+        $this->munchitos->html('<a href="#" target="_blank">Blank target</a>');
+        $links = $this->munchitos->links();
+        foreach ($links as $link) {
+            $this->assertEquals('_blank', $link->target());
+        }
+    }
 }
