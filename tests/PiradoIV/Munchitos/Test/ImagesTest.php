@@ -29,4 +29,10 @@ HTML;
         $images = $this->munchitos->images();
         $this->assertEquals(1, count($images));
     }
+
+    public function testImagesAltText()
+    {
+        $images = $this->munchitos()->images();
+        $this->assertEquals('Testing alt', $images[0]->altText());
+    }
 }
