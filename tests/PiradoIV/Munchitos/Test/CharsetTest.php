@@ -40,4 +40,10 @@ HTML;
         $this->munchitos->html($html);
         $this->assertEquals('iso-8859-1', $this->munchitos->charset());
     }
+
+    public function testReturnsNullIfCantFindCharset()
+    {
+        $this->munchitos->html('<html><body>Empty HTML!</body></html>');
+        $this->assertEquals(null, $this->munchitos->charset());
+    }
 }

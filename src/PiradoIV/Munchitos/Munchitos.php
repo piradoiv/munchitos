@@ -150,6 +150,12 @@ class Munchitos
         return $stylesheets;
     }
 
+    /**
+     * Tries to find the charset of the document,
+     * if specified.
+     *
+     * @return String The charset.
+     */
     public function charset()
     {
         try {
@@ -174,5 +180,7 @@ class Munchitos
         } catch (\InvalidArgumentException $exception) {
             // Just continues.
         }
+
+        return null;
     }
 }
