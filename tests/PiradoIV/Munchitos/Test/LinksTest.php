@@ -28,4 +28,12 @@ HTML;
         $links = $this->munchitos->links();
         $this->assertEquals(2, count($links));
     }
+
+    public function testLinksCanExtractHref()
+    {
+        $links = $this->munchitos->links();
+        foreach ($links as $link) {
+            $this->assertGreaterThan(0, strlen($link->href()));
+        }
+    }
 }
