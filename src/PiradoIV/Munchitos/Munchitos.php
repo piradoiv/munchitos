@@ -34,4 +34,13 @@ class Munchitos
     {
         return $this->html;
     }
+
+    public function html($html = null)
+    {
+        if ($html) {
+            $this->html = $html;
+        }
+
+        return $this->html;
+    }
 }
