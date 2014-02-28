@@ -22,12 +22,22 @@ HTML;
         $this->munchitos->html($this->html);
     }
 
+    /**
+     * It should return an array of CSS URLs
+     *
+     * @return void
+     */
     public function testCanFetchListOfStyleSheets()
     {
         $stylesheets = $this->munchitos->stylesheets();
         $this->assertEquals(2, count($stylesheets));
     }
 
+    /**
+     * It should return null if there aren't CSSs.
+     *
+     * @return void
+     */
     public function testReturnNullOnEmpty()
     {
         $html = '<html><body>Empty HTML</body></html>';
