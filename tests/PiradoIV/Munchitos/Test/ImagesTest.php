@@ -79,6 +79,12 @@ HTML;
         $this->assertTrue($images[0]->isLinked());
     }
 
+    /**
+     * Tests the Image instance still works with
+     * empty data.
+     *
+     * @return void
+     */
     public function testStillWorksWithEmptyData()
     {
         $images = $this->munchitos->images();
