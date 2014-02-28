@@ -183,4 +183,22 @@ class Munchitos
 
         return null;
     }
+
+    /**
+     * Returns an array of Link objects.
+     *
+     * @return Array The array.
+     */
+    public function links()
+    {
+        $links = array();
+        $this->crawler()->filter('a')->each(
+            function ($node) use (&$links) {
+                $link = new Link($node);
+                $links[] = $link;
+            }
+        );
+
+        return $links;
+    }
 }
