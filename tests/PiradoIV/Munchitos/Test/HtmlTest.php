@@ -32,4 +32,11 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
         $this->munchitos->setHtml($this->html);
         $this->assertEquals($this->html, $this->munchitos->getHtml());
     }
+
+    public function testCanUseHtmlAlias()
+    {
+        $this->munchitos->html($this->html);
+        $this->assertEquals($this->html, $this->munchitos->getHtml());
+        $this->assertEquals($this->html, $this->munchitos->html());
+    }
 }
