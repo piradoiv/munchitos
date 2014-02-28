@@ -107,6 +107,12 @@ class Munchitos
         }
     }
 
+    /**
+     * Returns the canonical URL, if present,
+     * returns null otherwise.
+     *
+     * @return String The Canonical URL.
+     */
     public function canonical()
     {
         try {
