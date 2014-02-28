@@ -124,4 +124,25 @@ class Munchitos
             return null;
         }
     }
+
+    /**
+     * Returns a list (if any) of stylesheets
+     * urls used on current HTML.
+     *
+     * @return Array The stylesheets URLs array.
+     */
+    public function stylesheets()
+    {
+        $stylesheets = array();
+        $filter = 'head link[rel=stylesheet]';
+        $this->crawler()
+            ->filter($filter)
+            ->each(
+                function ($node) use (&$stylesheets) {
+                    $stylesheets[] = $node->attr('href');
+                }
+            );
+
+        return $stylesheets;
+    }
 }
