@@ -42,4 +42,10 @@ HTML;
         $images = $this->munchitos->images();
         $this->assertEquals('images/testing.png', $images[0]->src());
     }
+
+    public function testCheckIfLinkedImage()
+    {
+        $images = $this->munchitos->images();
+        $this->assertTrue($images[0]->isLinked());
+    }
 }
