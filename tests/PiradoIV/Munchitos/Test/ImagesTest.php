@@ -34,5 +34,6 @@ HTML;
     {
         $images = $this->munchitos->images();
         $this->assertEquals('Testing alt', $images[0]->altText());
+        $this->assertEquals('Testing alt', $images[0]->alt());
     }
 }
