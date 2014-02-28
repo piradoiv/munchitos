@@ -189,7 +189,8 @@ class Munchitos
         $links = array();
         $this->crawler()->filter('a')->each(
             function ($node) use (&$links) {
-                $links[] = $node;
+                $link = new Link($node);
+                $links[] = $link;
             }
         );
 
