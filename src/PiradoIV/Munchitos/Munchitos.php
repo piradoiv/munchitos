@@ -35,6 +35,15 @@ class Munchitos
         return $this->html;
     }
 
+    /**
+     * Sets or gets the Html string, acts like
+     * an alias. If $html is set, it will
+     * store the html.
+     *
+     * @param String $html Stores the HTML.
+     *
+     * @return String The stored HTML.
+     */
     public function html($html = null)
     {
         if ($html) {

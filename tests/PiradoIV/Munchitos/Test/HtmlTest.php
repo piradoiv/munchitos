@@ -33,6 +33,12 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->html, $this->munchitos->getHtml());
     }
 
+    /**
+     * Tests we can use ->html($html) method as
+     * getter and setter.
+     *
+     * @return void
+     */
     public function testCanUseHtmlAlias()
     {
         $this->munchitos->html($this->html);
