@@ -2,7 +2,7 @@
 
 namespace PiradoIV\Munchitos;
 
-class MunchitosClass
+class Munchitos
 {
     /**
      * Create a new Munchitos Instance
