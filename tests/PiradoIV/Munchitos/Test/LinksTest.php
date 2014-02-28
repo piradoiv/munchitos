@@ -57,7 +57,7 @@ HTML;
 
     public function testLinksDetectsNofollow()
     {
-        $this->munchitos->html('<a href="#" rel="nofollow">No followed link</a>');
+        $this->munchitos->html('<a href="#" rel="NoFollow">No followed link</a>');
         $links = $this->munchitos->links();
         foreach ($links as $link) {
             $this->assertTrue($link->isNoFollow());
