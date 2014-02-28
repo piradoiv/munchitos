@@ -202,6 +202,11 @@ class Munchitos
         return $links;
     }
 
+    /**
+     * Returns an array of Image objects.
+     *
+     * @return Array The array.
+     */
     public function images()
     {
         $images = array();
