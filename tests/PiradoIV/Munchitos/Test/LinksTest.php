@@ -36,4 +36,13 @@ HTML;
             $this->assertGreaterThan(0, strlen($link->href()));
         }
     }
+
+    public function testLinksCanExtractTitle()
+    {
+        $this->munchitos->html('<a href="#" title="Testing">Testing Title</a>');
+        $links = $this->munchitos->links();
+        foreach ($links as $link) {
+            $this->assertEquals('Testing', $link->title());
+        }
+    }
 }
