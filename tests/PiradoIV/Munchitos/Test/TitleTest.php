@@ -13,6 +13,7 @@ class TitleTest extends TestCase
      */
     public function setUp()
     {
+        parent::setUp();
         $this->title = 'Hello World!';
         $this->html = <<<HTML
 <!doctype html>

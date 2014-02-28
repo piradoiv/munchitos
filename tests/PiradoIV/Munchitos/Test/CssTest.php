@@ -8,6 +8,7 @@ class CssTest extends TestCase
 {
     public function setUp()
     {
+        parent::setUp();
         $this->html = <<<HTML
 <!doctype html>
 <html>
