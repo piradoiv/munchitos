@@ -17,4 +17,9 @@ class Image
     {
         $this->node = $node;
     }
+
+    public function altText()
+    {
+        return $this->node->attr('alt');
+    }
 }
