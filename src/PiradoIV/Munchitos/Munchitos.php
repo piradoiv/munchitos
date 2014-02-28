@@ -201,4 +201,17 @@ class Munchitos
 
         return $links;
     }
+
+    public function images()
+    {
+        $images = array();
+        $this->crawler()->filter('img')->each(
+            function ($node) use (&$images) {
+                $image = new Image($node);
+                $images[] = $image;
+            }
+        );
+
+        return $images;
+    }
 }
