@@ -174,5 +174,7 @@ class Munchitos
         } catch (\InvalidArgumentException $exception) {
             // Just continues.
         }
+
+        return null;
     }
 }
