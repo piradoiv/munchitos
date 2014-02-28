@@ -106,4 +106,12 @@ class Munchitos
             return null;
         }
     }
+
+    public function canonical()
+    {
+        $canonical = $this->crawler()
+            ->filter('head link[rel="canonical"]')->attr('href');
+
+        return $canonical;
+    }
 }
