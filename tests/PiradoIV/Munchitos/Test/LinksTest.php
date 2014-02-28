@@ -19,7 +19,12 @@ class LinksTest extends TestCase
 <!doctype html>
 <html>
   <body>
-    <p>This is an example of <a href="http://www.example.org/" target="_blank">a link</a></p>
+    <p>
+      This is an example of
+      <a href="http://www.example.org/" target="_blank">
+        a link
+      </a>
+    </p>
     <p>This is <a href="internal-page.html">another link</a>.
   </body>
 </html>
