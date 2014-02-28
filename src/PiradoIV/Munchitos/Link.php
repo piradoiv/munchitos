@@ -25,4 +25,20 @@ class Link
     {
         return $this->node->attr('target');
     }
+
+    public function isNoFollow()
+    {
+        return $this->node->attr('rel') == 'nofollow' ?
+            true : false;
+    }
+
+    public function isFollow()
+    {
+        return !$this->isNoFollow();
+    }
+
+    public function isFollowed()
+    {
+        return $this->isFollow();
+    }
 }
