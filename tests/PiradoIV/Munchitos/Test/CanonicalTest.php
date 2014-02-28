@@ -26,4 +26,10 @@ HTML;
     {
         $this->assertEquals($this->canonical, $this->munchitos->canonical());
     }
+
+    public function testReturnsNullOnEmptyCanonical()
+    {
+        $this->munchitos->html('<html></html>');
+        $this->assertEquals(null, $this->munchitos->canonical());
+    }
 }
