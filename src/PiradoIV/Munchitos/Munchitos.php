@@ -69,6 +69,7 @@ class Munchitos
     public function title()
     {
         $title = $this->crawler()->filter('title')->text();
+        $title = trim($title);
         return $title;
     }
 }
