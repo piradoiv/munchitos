@@ -4,7 +4,7 @@ namespace PiradoIV\Munchitos\Test;
 
 use PiradoIV\Munchitos\Munchitos;
 
-class HtmlTest extends \PHPUnit_Framework_TestCase
+class HtmlTest extends TestCase
 {
     protected $html;
 
