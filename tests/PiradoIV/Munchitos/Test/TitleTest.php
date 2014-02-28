@@ -40,4 +40,10 @@ HTML;
         $title = $this->munchitos->title();
         $this->assertEquals($this->title, $title);
     }
+
+    public function testReturnEmptyOnTitleException()
+    {
+        $this->munchitos->html('<html><body>Empty head!</body></html>');
+        $this->assertEquals(null, $this->munchitos->title());
+    }
 }
