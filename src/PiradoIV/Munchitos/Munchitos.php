@@ -88,4 +88,14 @@ class Munchitos
             return null;
         }
     }
+
+    public function description()
+    {
+        try {
+            $title = $this->crawler()->filter('meta[name="description"]')->attr('value');
+            return $title;
+        } catch (\InvalidArgumentException $exception) {
+            return null;
+        }
+    }
 }
