@@ -47,4 +47,21 @@ class Image
     {
         return $this->node->attr('src');
     }
+
+    /**
+     * Checks if the image has a Link parent.
+     *
+     * @return Boolean True if it has a Link parent.
+     */
+    public function isLinked()
+    {
+        $parents = $this->node->parents();
+        foreach ($parents as $parent) {
+            if ($parent->nodeName == 'a') {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
