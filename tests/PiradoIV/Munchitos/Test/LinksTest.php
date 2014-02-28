@@ -54,4 +54,13 @@ HTML;
             $this->assertEquals('_blank', $link->target());
         }
     }
+
+    public function testLinksDetectsNofollow()
+    {
+        $this->munchitos->html('<a href="#" rel="nofollow">No followed link</a>');
+        $links = $this->munchitos->links();
+        foreach ($links as $link) {
+            $this->assertTrue($link->isNoFollow());
+        }
+    }
 }
