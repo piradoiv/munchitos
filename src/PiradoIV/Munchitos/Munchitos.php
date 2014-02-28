@@ -183,4 +183,16 @@ class Munchitos
 
         return null;
     }
+
+    public function links()
+    {
+        $links = array();
+        $this->crawler()->filter('a')->each(
+            function ($node) use (&$links) {
+                $links[] = $node;
+            }
+        );
+
+        return $links;
+    }
 }
