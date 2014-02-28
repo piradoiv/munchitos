@@ -20,6 +20,7 @@ class LinksTest extends TestCase
 HTML;
 
         $this->munchitos = new Munchitos;
+        $this->munchitos->html($this->html);
     }
 
     public function testCanFetchLinks()
