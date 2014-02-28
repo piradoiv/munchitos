@@ -32,7 +32,7 @@ HTML;
 
     public function testImagesAltText()
     {
-        $images = $this->munchitos()->images();
+        $images = $this->munchitos->images();
         $this->assertEquals('Testing alt', $images[0]->altText());
     }
 }
