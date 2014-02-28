@@ -26,6 +26,7 @@ class Munchitos
     public function setHtml($html = null)
     {
         $this->html = $html;
+        $this->crawler()->clear();
         $this->crawler()->addHtmlContent($this->html);
     }
 
