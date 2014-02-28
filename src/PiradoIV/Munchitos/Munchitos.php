@@ -38,9 +38,9 @@ class Munchitos
     public function html($html = null)
     {
         if ($html) {
-            $this->html = $html;
+            $this->setHtml($html);
         }
 
-        return $this->html;
+        return $this->getHtml();
     }
 }
