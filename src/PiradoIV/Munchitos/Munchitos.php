@@ -88,4 +88,22 @@ class Munchitos
             return null;
         }
     }
+
+    /**
+     * If present, returns the description value.
+     *
+     * @return String The description of the page.
+     */
+    public function description()
+    {
+        try {
+            $title = $this->crawler()
+                ->filter('meta[name="description"]')
+                ->attr('value');
+
+            return $title;
+        } catch (\InvalidArgumentException $exception) {
+            return null;
+        }
+    }
 }
