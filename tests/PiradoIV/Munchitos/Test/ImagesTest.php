@@ -20,6 +20,7 @@ class ImagesTest extends TestCase
   <body>
     <a href="http://www.example.org/">
       <img src="images/testing.png" alt="Testing alt" />
+      <img src="images/second-testing.png" />
     </a>
   </body>
 </html>>
@@ -38,7 +39,7 @@ HTML;
     public function testCanFetchImages()
     {
         $images = $this->munchitos->images();
-        $this->assertEquals(1, count($images));
+        $this->assertEquals(2, count($images));
     }
 
     /**
