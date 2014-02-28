@@ -41,6 +41,13 @@ HTML;
         $this->assertEquals($this->title, $title);
     }
 
+    /**
+     * Test the library handles the
+     * InvalidArgumentException when there isn't
+     * a title present on the HTML.
+     *
+     * @return void
+     */
     public function testReturnEmptyOnTitleException()
     {
         $this->munchitos->html('<html><body>Empty head!</body></html>');
