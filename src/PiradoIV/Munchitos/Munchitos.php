@@ -184,6 +184,11 @@ class Munchitos
         return null;
     }
 
+    /**
+     * Returns an array of Link objects.
+     *
+     * @return Array The array.
+     */
     public function links()
     {
         $links = array();

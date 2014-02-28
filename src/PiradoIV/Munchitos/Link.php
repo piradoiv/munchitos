@@ -10,4 +10,9 @@ class Link
     {
         $this->node = $node;
     }
+
+    public function href()
+    {
+        return $this->node->attr('href');
+    }
 }
