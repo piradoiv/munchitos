@@ -6,12 +6,24 @@ use \PiradoIV\Munchitos\Munchitos;
 
 class CharsetTest extends TestCase
 {
+    /**
+     * Prepares the default values for every
+     * test.
+     *
+     * @return void
+     */
     public function setUp()
     {
         parent::setUp();
         $this->munchitos = new Munchitos;
     }
 
+    /**
+     * Tests if the library can fetch the charset
+     * from meta charset.
+     *
+     * @return void
+     */
     public function testCanFetchCharsetFromMetaCharset()
     {
         $html = <<<HTML
@@ -27,6 +39,12 @@ HTML;
         $this->assertEquals('utf-8', $this->munchitos->charset());
     }
 
+    /**
+     * Tests if the library can fetch the charset
+     * from the content type.
+     *
+     * @return void
+     */
     public function testCanFetchCharsetFromContentType()
     {
         $html = <<<HTML
@@ -41,6 +59,12 @@ HTML;
         $this->assertEquals('iso-8859-1', $this->munchitos->charset());
     }
 
+    /**
+     * Library should return null if it can't
+     * find the charset. Don't throw Exception.
+     *
+     * @return void
+     */
     public function testReturnsNullIfCantFindCharset()
     {
         $this->munchitos->html('<html><body>Empty HTML!</body></html>');

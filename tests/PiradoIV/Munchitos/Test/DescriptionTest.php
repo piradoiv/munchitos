@@ -13,6 +13,7 @@ class DescriptionTest extends TestCase
      */
     public function setUp()
     {
+        parent::setUp();
         $this->description = 'Hello World!';
         $this->html = <<<HTML
 <!doctype html>

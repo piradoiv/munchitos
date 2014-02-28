@@ -6,6 +6,11 @@ use \PiradoIV\Munchitos\Munchitos;
 
 class ImagesTest extends TestCase
 {
+    /**
+     * Prepares the data for each test.
+     *
+     * @return void
+     */
     public function setUp()
     {
         parent::setUp();
@@ -24,12 +29,24 @@ HTML;
         $this->munchitos->html($this->html);
     }
 
+    /**
+     * Test if the library can fetch the
+     * array of images.
+     *
+     * @return void
+     */
     public function testCanFetchImages()
     {
         $images = $this->munchitos->images();
         $this->assertEquals(1, count($images));
     }
 
+    /**
+     * Tests if the library can fetch the
+     * alternative text from the image.
+     *
+     * @return void
+     */
     public function testImagesAltText()
     {
         $images = $this->munchitos->images();
@@ -37,12 +54,24 @@ HTML;
         $this->assertEquals('Testing alt', $images[0]->alt());
     }
 
+    /**
+     * Tests if the library can fetch the
+     * image source (URL).
+     *
+     * @return void
+     */
     public function testCanFetchSrc()
     {
         $images = $this->munchitos->images();
         $this->assertEquals('images/testing.png', $images[0]->src());
     }
 
+    /**
+     * Tests if the library can detect if the
+     * image is beign linked.
+     *
+     * @return void
+     */
     public function testCheckIfLinkedImage()
     {
         $images = $this->munchitos->images();

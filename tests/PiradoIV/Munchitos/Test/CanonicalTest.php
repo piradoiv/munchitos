@@ -14,6 +14,8 @@ class CanonicalTest extends TestCase
      */
     public function setUp()
     {
+        parent::setUp();
+
         $this->canonical = 'http://www.example.org/';
         $this->html = <<<HTML
 <!doctype html>
