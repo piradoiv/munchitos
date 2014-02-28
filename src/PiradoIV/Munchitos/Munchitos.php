@@ -109,9 +109,13 @@ class Munchitos
 
     public function canonical()
     {
-        $canonical = $this->crawler()
-            ->filter('head link[rel="canonical"]')->attr('href');
+        try {
+            $canonical = $this->crawler()
+                ->filter('head link[rel="canonical"]')->attr('href');
 
-        return $canonical;
+            return $canonical;
+        } catch (\InvalidArgumentException $exception) {
+            return null;
+        }
     }
 }
