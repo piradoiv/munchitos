@@ -18,11 +18,21 @@ class Image
         $this->node = $node;
     }
 
+    /**
+     * Extracts the alt text tag contents.
+     *
+     * @return String The alternative text of the image.
+     */
     public function altText()
     {
         return $this->node->attr('alt');
     }
 
+    /**
+     * An alias for altText() method.
+     *
+     * @return String Same as altText() method.
+     */
     public function alt()
     {
         return $this->altText();
