@@ -37,4 +37,14 @@ class Image
     {
         return $this->altText();
     }
+
+    /**
+     * Extracts the image source URL.
+     *
+     * @return String The URL.
+     */
+    public function src()
+    {
+        return $this->node->attr('src');
+    }
 }
