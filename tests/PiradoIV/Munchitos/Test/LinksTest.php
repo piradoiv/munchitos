@@ -61,6 +61,8 @@ HTML;
         $links = $this->munchitos->links();
         foreach ($links as $link) {
             $this->assertTrue($link->isNoFollow());
+            $this->assertFalse($link->isFollow());
+            $this->assertFalse($link->isFollowed());
         }
     }
 }
