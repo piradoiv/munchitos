@@ -6,6 +6,11 @@ use PiradoIV\Munchitos\Munchitos;
 
 class TitleTest extends TestCase
 {
+    /**
+     * Prepares the contents for every test.
+     *
+     * @return void
+     */
     public function setUp()
     {
         $this->title = 'Hello World!';
@@ -24,6 +29,12 @@ HTML;
         $this->munchitos->html($this->html);
     }
 
+    /**
+     * Test we can get the title and it's exactly
+     * the same.
+     *
+     * @return void
+     */
     public function testCanGetTitle()
     {
         $title = $this->munchitos->title();

@@ -57,6 +57,12 @@ class Munchitos
         return $this->getHtml();
     }
 
+    /**
+     * Returns a singleton of the Symfony's
+     * DomCrawler component.
+     *
+     * @return Crawler The DomCrawler.
+     */
     public function crawler()
     {
         if (!$this->crawler) {
@@ -66,6 +72,11 @@ class Munchitos
         return $this->crawler;
     }
 
+    /**
+     * Returns the title, trimming the spaces.
+     *
+     * @return String the Title.
+     */
     public function title()
     {
         $title = $this->crawler()->filter('title')->text();
