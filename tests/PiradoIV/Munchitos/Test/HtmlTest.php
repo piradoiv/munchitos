@@ -18,6 +18,7 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $this->html = '<html><body>Hello World!</body></html>';
+        $this->munchitos = new Munchitos;
     }
 
     /**
@@ -28,9 +29,20 @@ class HtmlTest extends \PHPUnit_Framework_TestCase
      */
     public function testCanAddAndGetHtml()
     {
-        $munchitos = new \PiradoIV\Munchitos\Munchitos;
-        $munchitos->setHtml($this->html);
+        $this->munchitos->setHtml($this->html);
+        $this->assertEquals($this->html, $this->munchitos->getHtml());
+    }
 
-        $this->assertEquals($this->html, $munchitos->getHtml());
+    /**
+     * Tests we can use ->html($html) method as
+     * getter and setter.
+     *
+     * @return void
+     */
+    public function testCanUseHtmlAlias()
+    {
+        $this->munchitos->html($this->html);
+        $this->assertEquals($this->html, $this->munchitos->getHtml());
+        $this->assertEquals($this->html, $this->munchitos->html());
     }
 }
