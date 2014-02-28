@@ -80,8 +80,12 @@ class Munchitos
      */
     public function title()
     {
-        $title = $this->crawler()->filter('title')->text();
-        $title = trim($title);
-        return $title;
+        try {
+            $title = $this->crawler()->filter('title')->text();
+            $title = trim($title);
+            return $title;
+        } catch (\InvalidArgumentException $exception) {
+            return null;
+        }
     }
 }
