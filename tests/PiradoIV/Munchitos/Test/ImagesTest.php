@@ -20,8 +20,8 @@ class ImagesTest extends TestCase
   <body>
     <a href="http://www.example.org/">
       <img src="images/testing.png" alt="Testing alt" />
-      <img src="images/second-testing.png" />
     </a>
+    <img src="images/second-testing.png" />
   </body>
 </html>>
 HTML;
@@ -77,5 +77,11 @@ HTML;
     {
         $images = $this->munchitos->images();
         $this->assertTrue($images[0]->isLinked());
+    }
+
+    public function testStillWorksWithEmptyData()
+    {
+        $images = $this->munchitos->images();
+        $this->assertEquals(null, $images[1]->alt());
     }
 }
