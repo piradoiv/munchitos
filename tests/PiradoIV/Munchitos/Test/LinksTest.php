@@ -6,6 +6,12 @@ use \PiradoIV\Munchitos\Munchitos;
 
 class LinksTest extends TestCase
 {
+    /**
+     * Prepares the data shared with all of
+     * the tests.
+     *
+     * @return void
+     */
     public function setUp()
     {
         parent::setUp();
@@ -23,12 +29,24 @@ HTML;
         $this->munchitos->html($this->html);
     }
 
+    /**
+     * Test if the library can get an array
+     * of links.
+     *
+     * @return void
+     */
     public function testCanFetchLinks()
     {
         $links = $this->munchitos->links();
         $this->assertEquals(2, count($links));
     }
 
+    /**
+     * Tests if the library can extract the
+     * href attribute from the links.
+     *
+     * @return void
+     */
     public function testLinksCanExtractHref()
     {
         $links = $this->munchitos->links();
@@ -37,6 +55,12 @@ HTML;
         }
     }
 
+    /**
+     * Tests if the library can extract the
+     * title attribute from the link.
+     *
+     * @return void
+     */
     public function testLinksCanExtractTitle()
     {
         $this->munchitos->html('<a href="#" title="Testing">Testing Title</a>');
@@ -46,6 +70,12 @@ HTML;
         }
     }
 
+    /**
+     * Tests if the library can extract the
+     * target attribute from the link.
+     *
+     * @return void
+     */
     public function testLinksCanExtractTarget()
     {
         $this->munchitos->html('<a href="#" target="_blank">Blank target</a>');
@@ -55,6 +85,12 @@ HTML;
         }
     }
 
+    /**
+     * Tests if the library can detect if a link
+     * is followed or not.
+     *
+     * @return void
+     */
     public function testLinksDetectsNofollow()
     {
         $this->munchitos->html('<a href="#" rel="NoFollow">No followed link</a>');

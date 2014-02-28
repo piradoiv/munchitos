@@ -6,6 +6,11 @@ use \PiradoIV\Munchitos\Munchitos;
 
 class CssTest extends TestCase
 {
+    /**
+     * Prepares the data for each test.
+     *
+     * @return void
+     */
     public function setUp()
     {
         parent::setUp();
