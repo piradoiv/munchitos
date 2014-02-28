@@ -22,4 +22,9 @@ class Image
     {
         return $this->node->attr('alt');
     }
+
+    public function alt()
+    {
+        return $this->altText();
+    }
 }
