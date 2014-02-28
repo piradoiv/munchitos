@@ -201,4 +201,22 @@ class Munchitos
 
         return $links;
     }
+
+    /**
+     * Returns an array of Image objects.
+     *
+     * @return Array The array.
+     */
+    public function images()
+    {
+        $images = array();
+        $this->crawler()->filter('img')->each(
+            function ($node) use (&$images) {
+                $image = new Image($node);
+                $images[] = $image;
+            }
+        );
+
+        return $images;
+    }
 }
