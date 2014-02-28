@@ -2,9 +2,12 @@
 
 namespace PiradoIV\Munchitos;
 
+use \Symfony\Component\DomCrawler\Crawler;
+
 class Munchitos
 {
     protected $html;
+    protected $crawler;
 
     /**
      * Create a new Munchitos Instance
@@ -23,6 +26,7 @@ class Munchitos
     public function setHtml($html = null)
     {
         $this->html = $html;
+        $this->crawler()->addHtmlContent($this->html);
     }
 
     /**
@@ -51,5 +55,20 @@ class Munchitos
         }
 
         return $this->getHtml();
+    }
+
+    public function crawler()
+    {
+        if (!$this->crawler) {
+            $this->crawler = new Crawler;
+        }
+
+        return $this->crawler;
+    }
+
+    public function title()
+    {
+        $title = $this->crawler()->filter('title')->text();
+        return $title;
     }
 }
