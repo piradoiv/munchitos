@@ -15,4 +15,14 @@ class Link
     {
         return $this->node->attr('href');
     }
+
+    public function title()
+    {
+        return $this->node->attr('title');
+    }
+
+    public function target()
+    {
+        return $this->node->attr('target');
+    }
 }
