@@ -36,4 +36,10 @@ HTML;
         $this->assertEquals('Testing alt', $images[0]->altText());
         $this->assertEquals('Testing alt', $images[0]->alt());
     }
+
+    public function testCanFetchSrc()
+    {
+        $images = $this->munchitos->images();
+        $this->assertEquals('images/testing.png', $images[0]->src());
+    }
 }
