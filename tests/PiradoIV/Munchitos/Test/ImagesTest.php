@@ -21,6 +21,7 @@ class ImagesTest extends TestCase
     <a href="http://www.example.org/">
       <img src="images/testing.png" alt="Testing alt" />
     </a>
+    <img src="images/second-testing.png" />
   </body>
 </html>>
 HTML;
@@ -38,7 +39,7 @@ HTML;
     public function testCanFetchImages()
     {
         $images = $this->munchitos->images();
-        $this->assertEquals(1, count($images));
+        $this->assertEquals(2, count($images));
     }
 
     /**
@@ -76,5 +77,18 @@ HTML;
     {
         $images = $this->munchitos->images();
         $this->assertTrue($images[0]->isLinked());
+        $this->assertFalse($images[1]->isLinked());
+    }
+
+    /**
+     * Tests the Image instance still works with
+     * empty data.
+     *
+     * @return void
+     */
+    public function testStillWorksWithEmptyData()
+    {
+        $images = $this->munchitos->images();
+        $this->assertEquals(null, $images[1]->alt());
     }
 }
