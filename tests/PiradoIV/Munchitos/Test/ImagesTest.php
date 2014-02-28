@@ -23,4 +23,10 @@ HTML;
         $this->munchitos = new Munchitos;
         $this->munchitos->html($this->html);
     }
+
+    public function testCanFetchImages()
+    {
+        $images = $this->munchitos->images();
+        $this->assertEquals(1, count($images));
+    }
 }
