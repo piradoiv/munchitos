@@ -13,13 +13,13 @@ At the moment, Munchitos currently have these features:
 - List every linked stylesheet.
 - Detects the charset encoding.
 
-In the future, Munchitos aims to have support to:
+In the future, Munchitos aims to support:
 
-- Detect semantic microformat.
+- Semantic microformat.
 - Works with relative URL routes on links, images,
 stylesheets, etc.
 
-## How to use it
+## How to install
 
 Composer is the easier way, just add the library
 to the dependancies:
@@ -28,7 +28,14 @@ to the dependancies:
       "piradoiv/munchitos": "dev-master"
     }
 
-And call **composer update**.
+Remember to call **composer install** or **composer
+update** after adding composer.json file. There are
+loads of information about setting up
+[http://getcomposer.org](Composer) on your project.
+
+## How to use
+
+...
 
 ## Acknowledges
 
@@ -44,5 +51,6 @@ with the PSR-2 coding style.
 
 ## Contact
 
-I'm @PiradoIV on Twitter, give me a shout if you
-need a hand with this library.
+I'm [http://twitter.com/piradoiv/](@PiradoIV) on
+Twitter, give me a shout if you need a hand with
+this library.
