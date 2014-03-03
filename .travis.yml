@@ -10,9 +10,9 @@ php:
 before_script:
   - composer self-update
   - composer install
-  - pyrus install pear/PHP_CodeSniffer
+  # - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
 
 script:
-  - phpcs --standard=psr2 src/
+  # - phpcs --standard=psr2 src/
   - phpunit --coverage-text

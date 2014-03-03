@@ -1,4 +1,5 @@
 # Munchitos
+[![Build Status](https://travis-ci.org/piradoiv/munchitos.png?branch=master)](https://travis-ci.org/piradoiv/munchitos)
 
 This library aims to make developer's life easier
 while trying to parse the HTML contents.
