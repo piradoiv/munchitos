@@ -31,11 +31,11 @@ to the dependancies:
 Remember to call **composer install** or **composer
 update** after adding composer.json file. There are
 loads of information about setting up
-[http://getcomposer.org](Composer) on your project.
+[Composer](http://getcomposer.org) on your project.
 
 Munchitos goal isn't to download the HTML itself, so
 I recommend to also install a cURL wrapper, like
-[https://packagist.org/packages/shuber/curl](shuber/curl).
+[shuber/curl](https://packagist.org/packages/shuber/curl).
 
 ## How to use
 
@@ -59,7 +59,7 @@ Returns the title of the page, trimming the spaces.
 If there is any meta description tag, it returns its contents.
 
 ### $munchitos->canonical()
-Some websites specifies a [https://support.google.com/webmasters/answer/139394?hl=en](canonical URL), there you go.
+Some websites specifies a [canonical URL](https://support.google.com/webmasters/answer/139394?hl=en), there you go.
 
 ### $munchitos->stylesheets()
 Returns a list (if any) of stylesheets urls used
@@ -99,6 +99,6 @@ with the PSR-2 coding style.
 
 ## Contact
 
-I'm [http://twitter.com/piradoiv/](@PiradoIV) on
+I'm [@PiradoIV](http://twitter.com/piradoiv/) on
 Twitter, give me a shout if you need a hand with
 this library.
