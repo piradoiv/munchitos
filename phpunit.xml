@@ -5,4 +5,9 @@
             <directory>tests/PiradoIV</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/PiradoIV</directory>
+        </whitelist>
+    </filter>
 </phpunit>
