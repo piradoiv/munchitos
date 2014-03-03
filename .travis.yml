@@ -10,7 +10,7 @@ php:
 before_script:
   - composer self-update
   - composer install
-  - pyrus install pear/PHP_CodeSniffer
+  # - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
 
 script:
