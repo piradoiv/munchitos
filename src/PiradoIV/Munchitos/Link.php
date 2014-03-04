@@ -41,7 +41,7 @@ class Link
         if ($this->url) {
             $deriver = new AbsoluteUrlDeriver;
             $deriver->init($url, $this->url);
-            $url = (string)$deriver->getAbsoluteUrl();
+            $url = $deriver->getAbsoluteUrl();
         }
 
         return $url;
