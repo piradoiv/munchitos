@@ -15,6 +15,7 @@ class Munchitos
 {
     protected $html;
     protected $crawler;
+    protected $url;
 
     /**
      * Create a new Munchitos Instance
@@ -193,6 +194,20 @@ class Munchitos
     }
 
     /**
+     * Sets the URL were the HTML was downloaded.
+     *
+     * @return String The URL.
+     */
+    public function url($url = null)
+    {
+        if ($url) {
+            $this->url = $url;
+        }
+
+        return $this->url;
+    }
+
+    /**
      * Returns an array of Link objects.
      *
      * @return Array The array.
@@ -200,9 +215,10 @@ class Munchitos
     public function links()
     {
         $links = array();
+        $baseUrl = $this->url();
         $this->crawler()->filter('a')->each(
-            function ($node) use (&$links) {
-                $link = new Link($node);
+            function ($node) use (&$links, $baseUrl) {
+                $link = new Link($node, $baseUrl);
                 $links[] = $link;
             }
         );
