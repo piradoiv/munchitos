@@ -18,13 +18,6 @@ class Munchitos
     protected $url;
 
     /**
-     * Create a new Munchitos Instance
-     */
-    public function __construct()
-    {
-    }
-
-    /**
      * Sets or gets the Html string, If $html
      * is set, it will store the html.
      *
