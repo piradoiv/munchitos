@@ -9,9 +9,12 @@
 
 namespace PiradoIV\Munchitos;
 
+use \webignition\AbsoluteUrlDeriver\AbsoluteUrlDeriver;
+
 class Link
 {
     protected $node;
+    protected $url;
 
     /**
      * Creates a new Link instance.
@@ -20,9 +23,10 @@ class Link
      *
      * @return void
      */
-    public function __construct($node)
+    public function __construct($node, $url = null)
     {
         $this->node = $node;
+        $this->url  = $url;
     }
 
     /**
@@ -32,7 +36,15 @@ class Link
      */
     public function href()
     {
-        return $this->node->attr('href');
+        $url = $this->node->attr('href');
+
+        if ($this->url) {
+            $deriver = new AbsoluteUrlDeriver;
+            $deriver->init($url, $this->url);
+            $url = (string)$deriver->getAbsoluteUrl();
+        }
+
+        return $url;
     }
 
     /**

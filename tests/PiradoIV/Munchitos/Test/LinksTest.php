@@ -142,4 +142,19 @@ HTML;
 
         $this->assertEquals(2, count($links));
     }
+
+    /**
+     * Tests relative URLs are beign transformed
+     * to proper absolute paths.
+     *
+     * @return void
+     */
+    public function testRelativeUrls()
+    {
+        $this->munchitos->url('http://www.example.org');
+        $links = $this->munchitos->links();
+        $link = $links[1];
+        $expected = 'http://www.example.org/internal-page.html';
+        $this->assertEquals($expected, $link->href());
+    }
 }
