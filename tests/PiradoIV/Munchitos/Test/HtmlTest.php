@@ -29,18 +29,6 @@ class HtmlTest extends TestCase
     }
 
     /**
-     * Proves we can add and get the HTML
-     * on Munchitos.
-     *
-     * @return void
-     */
-    public function testCanAddAndGetHtml()
-    {
-        $this->munchitos->setHtml($this->html);
-        $this->assertEquals($this->html, $this->munchitos->getHtml());
-    }
-
-    /**
      * Tests we can use ->html($html) method as
      * getter and setter.
      *
@@ -49,7 +37,6 @@ class HtmlTest extends TestCase
     public function testCanUseHtmlAlias()
     {
         $this->munchitos->html($this->html);
-        $this->assertEquals($this->html, $this->munchitos->getHtml());
         $this->assertEquals($this->html, $this->munchitos->html());
     }
 }
