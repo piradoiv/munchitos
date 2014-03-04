@@ -142,4 +142,12 @@ HTML;
 
         $this->assertEquals(2, count($links));
     }
+
+    public function testRelativeUrls()
+    {
+        $links = $this->munchitos->links();
+        $link = $links[1];
+        $expected = 'http://www.example.org/internal-page.html';
+        $this->assertEquals($expected, $link->href());
+    }
 }
