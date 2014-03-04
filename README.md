@@ -17,8 +17,6 @@ At the moment, Munchitos currently have these features:
 In the future, Munchitos aims to support:
 
 - Semantic microformat.
-- Work with relative URL routes on links, images,
-stylesheets, etc.
 
 ## How to install
 
@@ -45,6 +43,11 @@ I recommend to also install a cURL wrapper, like
     // a Munchitos instance.
     require 'vendor/autoload.php';
     $munchitos = new PiradoIV\Munchitos\Munchitos;
+
+    // Optionally but definitely you want to do it,
+    // set the source URL from where you downloaded
+    // the HTML contents.
+    $munchitos->url("http://www.example.com/foo/bar.html");
 
     // Fill it with the HTML
     $html = '<html><body><p>Hello World!</p></body></html>';
