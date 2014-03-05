@@ -24,7 +24,7 @@ Composer is the easier way, just add the library
 to the dependancies:
 
 ```json
-require {
+"require": {
   "piradoiv/munchitos": "dev-master"
 }
 ```
