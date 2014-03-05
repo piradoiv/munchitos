@@ -23,9 +23,13 @@ In the future, Munchitos aims to support:
 Composer is the easier way, just add the library
 to the dependancies:
 
-    require {
-      "piradoiv/munchitos": "dev-master"
-    }
+```json
+{
+  "require": {
+    "piradoiv/munchitos": "dev-master"
+  }
+}
+```
 
 Remember to call **composer install** or **composer
 update** after adding composer.json file. There are
@@ -38,23 +42,25 @@ I recommend to also install a cURL wrapper, like
 
 ## How to use
 
-    <?php
-    // First you'll have to load composer and create
-    // a Munchitos instance.
-    require 'vendor/autoload.php';
-    $munchitos = new PiradoIV\Munchitos\Munchitos;
+```php
+<?php
+// First you'll have to load composer and create
+// a Munchitos instance.
+require 'vendor/autoload.php';
+$munchitos = new PiradoIV\Munchitos\Munchitos;
 
-    // Optionally but definitely you want to do it,
-    // set the source URL from where you downloaded
-    // the HTML contents.
-    $munchitos->url("http://www.example.com/foo/bar.html");
+// Optionally but definitely you want to do it,
+// set the source URL from where you downloaded
+// the HTML contents.
+$munchitos->url("http://www.example.com/foo/bar.html");
 
-    // Fill it with the HTML
-    $html = '<html><body><p>Hello World!</p></body></html>';
-    $munchitos->html($html);
+// Fill it with the HTML
+$html = '<html><body><p>Hello World!</p></body></html>';
+$munchitos->html($html);
 
-    // And start calling any information you need.
-    echo $munchitos->title();
+// And start calling any information you need.
+echo $munchitos->title();
+```
 
 ### $munchitos->title()
 Returns the title of the page, trimming the spaces.
