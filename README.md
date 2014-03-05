@@ -24,8 +24,10 @@ Composer is the easier way, just add the library
 to the dependancies:
 
 ```json
-"require": {
-  "piradoiv/munchitos": "dev-master"
+{
+  "require": {
+    "piradoiv/munchitos": "dev-master"
+  }
 }
 ```
 
