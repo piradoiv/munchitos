@@ -75,7 +75,8 @@ class Link
      */
     public function isNoFollow()
     {
-        return strtolower($this->node->attr('rel')) == 'nofollow';
+        $rel = strtolower($this->node->attr('rel'));
+        return $rel == 'nofollow';
     }
 
     /**
